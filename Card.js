@@ -1,12 +1,14 @@
 // EVERY REACT COMPONENT MUST RETURN A SINGLE DOM ELEMENT
 
-function Card(){
+function Card(props){
+    console.log(props);
     const name = "Brian Lafuente";
-    const title = "React From the Beginning";
+    // const title = "React From the Beginning";
+    const title = props.title;
     const saleOn = true;
 
     return (
-        <div className="row">
+        // <div className="row">
             <div className="col s2">
                 <div className="card hoverable small">
                     <div className="card-image">
@@ -21,7 +23,7 @@ function Card(){
                     </div>
                 </div>
             </div>    
-        </div>
+        // </div>
     )   
 }
 
