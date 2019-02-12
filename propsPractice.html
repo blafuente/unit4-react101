@@ -29,10 +29,10 @@
     // 1. What.
     console.log(data[0].course);
     const app = <div className="row">
-            <Card title="React. From the Beginning" />
-            <Card title="Unity Game Developement" />
-            <Card title="Apache Kafka Series" />
-            <Card title="Music production in logic pro x" />
+            <Card image={data[0].image} title={data[0].course} name={data[0].instructor} />
+            <Card image={data[1].image}title={data[1].course} name={data[1].instructor} />
+            <Card image={data[2].image}title={data[2].course} name={data[2].instructor}/>
+            <Card image={data[3].image}title={data[3].course} name={data[3].instructor}/>
         </div>
     // 2. Where.
     const root = document.getElementById('root');

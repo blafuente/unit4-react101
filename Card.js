@@ -2,9 +2,10 @@
 
 function Card(props){
     console.log(props);
-    const name = "Brian Lafuente";
+    const name = props.name;
     // const title = "React From the Beginning";
     const title = props.title;
+    const image = props.image;
     const saleOn = true;
 
     return (
@@ -12,7 +13,7 @@ function Card(props){
             <div className="col s2">
                 <div className="card hoverable small">
                     <div className="card-image">
-                        <img src="http://lorempixel.com/400/400/technics/" />
+                        <img src={image} />
                     </div>
                     <div className="card-content">
                         <p>{title}</p>
