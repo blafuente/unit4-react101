@@ -14,20 +14,35 @@ class CoinFlip extends React.Component{
         ]
         // State is special. React cares about State. A LOT 
         this.state = {
-            image: this.coin[0],
-            image1: this.coin[1]
+            image: this.coin[0]
         }
+        this.flipCoin = this.flipCoin.bind(this)
+    }
+
+    flipCoin(){
+        console.log('flip coin ran!');
+        let coinSide = Math.round(Math.random()); // 0,1
+        this.setState({
+            image: this.coin[coinSide]
+        })
+        // NEVER DO THIS...
+        // this.state.image = this.coin[coinSide];
     }
 
     // local class method
     // EVERY... REPEAT... EVERY class component, MUST have a render.
     render(){
+
+        // ANY TIME state changes. render method runs
+
         // it is my job to return a single DOM element
         // whether you like it or not, render will fun after the constructor
+        // React events are camelCase and attached to the element
+        // You don't invoke them, just pass them
         return(
             <div className="coin-flip">
+                <button onClick={this.flipCoin}>Flip Coin</button>
                 <img src={this.state.image} />
-                <img src={this.state.image1} />
             </div>
         )
     }
