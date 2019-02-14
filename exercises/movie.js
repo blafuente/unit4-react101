@@ -39,7 +39,7 @@ class App extends React.Component{
         let movieList = this.state.moviesToShow.map((movie)=>{
             const fullImagePath = imagePath + movie.poster_path;
             return(
-                <Poster image={fullImagePath} />
+                <Poster key={movie.id} image={fullImagePath} />
             )
         })
         console.log(this.state.moviesToShow);
